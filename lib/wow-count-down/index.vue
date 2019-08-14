@@ -2,6 +2,7 @@
     <div class="wrap" :style="computedCountStyle">
         <div class="inner btn"
              v-if="num === count_max"
+             :style="computedCountInnerStyle"
              @click="handleClick">
             <slot name="count_txt"></slot>
             <text v-if="count_txt" :style="computedCountTxtStyle">{{count_txt}}</text>
