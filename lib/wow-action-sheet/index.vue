@@ -5,7 +5,7 @@
              ref="inner"
              @click="handleEmit('null')">
             <div class="option"
-                 @click="handleEmit('change', item)"
+                 @click="handleSelect(item)"
                  :class="[index === 0 && 'first-child',
                  index === action_options.length - 1 && 'last-child']"
                  v-for="(item, index) in action_options"
@@ -45,6 +45,9 @@
             this.animationRun();
         },
         methods: {
+            handleSelect (item) {
+                this.handleEmit('change', { value: item, callback: () => this.handleEmit('close') });
+            },
             animationRun () {
                 animation.transition(this.$refs.inner, {
                     styles: {
