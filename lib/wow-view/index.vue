@@ -5,10 +5,10 @@
         <div class="main"
              :style="computedViewStyle">
             <scroller
-                v-if="view_use_scroll"
-                :offset-accuracy="view_offset_accuracy"
-                class="inner"
-                @scroll="handleEmit('scroll', $event)">
+                    v-if="view_use_scroll"
+                    :offset-accuracy="view_offset_accuracy"
+                    class="inner"
+                    @scroll="handleEmit('scroll', $event)">
                 <slot></slot>
             </scroller>
             <div class="inner"
@@ -27,19 +27,19 @@
                      @click="handleLeft"
                      :style="computedViewHeaderLeftStyle">
                     <image
-                        v-if="view_header_left_src"
-                        :src="view_header_left_src"
-                        :style="computedViewHeaderLeftSrcStyle"
+                            v-if="view_header_left_src"
+                            :src="view_header_left_src"
+                            :style="computedViewHeaderLeftSrcStyle"
                     ></image>
                     <text
-                        :style="computedViewHeaderLeftTxtStyle"
-                        v-if="view_header_left_txt"
+                            :style="computedViewHeaderLeftTxtStyle"
+                            v-if="view_header_left_txt"
                     >{{view_header_left_txt}}</text>
                 </div>
                 <div class="center"
                      :style="computedViewHeaderCenterStyle">
                     <text
-                        :style="computedViewHeaderCenterTxtStyle"
+                            :style="computedViewHeaderCenterTxtStyle"
                     >{{view_header_center_txt}}</text>
                 </div>
                 <slot name="view-header-center"></slot>
@@ -47,14 +47,14 @@
                      @click="handleEmit('right', $event)"
                      :style="computedViewHeaderRightStyle">
                     <image
-                        v-if="view_header_right_src"
-                        :src="view_header_right_src"
-                        :style="computedViewHeaderRightSrcStyle"
-                        autoBitmapRecycle="false"
+                            v-if="view_header_right_src"
+                            :src="view_header_right_src"
+                            :style="computedViewHeaderRightSrcStyle"
+                            autoBitmapRecycle="false"
                     ></image>
                     <text
-                        :style="computedViewHeaderRightTxtStyle"
-                        v-if="view_header_right_txt"
+                            :style="computedViewHeaderRightTxtStyle"
+                            v-if="view_header_right_txt"
                     >{{view_header_right_txt}}</text>
                 </div>
                 <slot name="view-header-cue"></slot>
@@ -150,7 +150,6 @@
     .main{
         flex: 1;
         width: 750px;
-        background-color: #fff;
     }
     .head {
         position: absolute;

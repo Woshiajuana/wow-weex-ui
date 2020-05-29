@@ -20,6 +20,9 @@
         props: {
             fixed_style: { default: config.fixed_style },
         },
+        created () {
+            this.weexGet();
+        },
         computed: {
             computedFixedStyle () {
                 let paddingBottom = 0;
