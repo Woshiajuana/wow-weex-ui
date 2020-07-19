@@ -106,6 +106,7 @@
         methods: {
             // 切换菜单
             handleSwitch (item, index) {
+                this.$emit('index', index);
                 if (!this.nav_use_switch)
                     return this.switchNav(index);
                 this.$emit('switch', {
